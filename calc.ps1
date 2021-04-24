@@ -4,23 +4,23 @@
 [int]$var4
 
 Clear-Host
-$language = Read-Host -Prompt 'Choose your language ( ENG | РУС )'
+$language = Read-Host -Prompt 'Choose your language/Выберите свой язык ( ENG | РУС )'
 Clear-Host
 
 $language
 
-if ($language -contains "eng") {
+if ($language -like "eng") {
 $Message = 'Do you wanna use my calc? ( Y | N )'
 $yes = "y"
 $no = "n"
 Clear-Host
 
-Write-Host $Message
+Write-Output $Message
 $answer = Read-Host
 Clear-Host
 if ($answer -contains $yes) {
     while ($answer -contains $yes) {
-        Write-Host "Write down some numbers!"
+        Write-Output "Write down some numbers!"
         [int]$var1 = Read-Host -Prompt "Number 1"
         [int]$var2 = Read-Host -Prompt "Number 2"
         [string]$var3 = Read-Host -Prompt "What operation do you need? ( + | - | * | / )"
@@ -36,7 +36,7 @@ if ($answer -contains $yes) {
         if ($var3 -eq "/") {
             $var4 = $var1 / $var2
         }
-        Write-Host "Anwser: $var4"
+        Write-Output "Anwser: $var4"
         Start-Sleep -Seconds 3
         Clear-Host
         Clear-Variable -Name var1
@@ -44,7 +44,7 @@ if ($answer -contains $yes) {
         Clear-Variable -Name var3
         Clear-Variable -Name var4
         Clear-Variable -Name answer
-        Write-Host $Message
+        Write-Output $Message
         $answer = Read-Host
         Clear-Host
             if ($answer -contains $no) {
@@ -54,7 +54,7 @@ if ($answer -contains $yes) {
             }
             ElseIf ($answer -ne $no, $yes) {
                 Clear-Host
-                Write-Host "Please, use <Y> or <N>!"
+                Write-Output "Please, use <Y> or <N>!"
                 Start-Sleep -Seconds 3
                 $answer = $yes
                 Clear-Host
@@ -63,14 +63,14 @@ if ($answer -contains $yes) {
 }
 ElseIf ($answer -contains $no) {
     Clear-Host
-    Write-Host "( ˘_˘ )"
+    Write-Output "( ˘_˘ )"
     Start-Sleep -Seconds 3
     Clear-Host
     break
 }
 Else {
     Clear-Host
-    Write-Host "Please, use <Y> or <N>!"
+    Write-Output "Please, use <Y> or <N>!"
     Start-Sleep -Seconds 3
     Clear-Host
     break
@@ -92,14 +92,14 @@ $yes = "д"
 $no = "н"
 Clear-Host
 
-Write-Host $Message
+Write-Output $Message
 $answer = Read-Host
 Clear-Host
 if ($answer -contains $yes) {
     while ($answer -contains $yes) {
-            Write-Host "Напишите пару чисел!"
-            [int]$var1 = Read-Host -Prompt "Number 1"
-            [int]$var2 = Read-Host -Prompt "Number 2"
+            Write-Output "Напишите пару чисел!"
+            [int]$var1 = Read-Host -Prompt "Число 1"
+            [int]$var2 = Read-Host -Prompt "Число 2"
             [string]$var3 = Read-Host -Prompt "Какую операцию будем над ними выполнять? ( + | - | * | / )"
             if ($var3 -eq "+") {
                 $var4 = $var1 + $var2
@@ -113,7 +113,7 @@ if ($answer -contains $yes) {
             if ($var3 -eq "/") {
                 $var4 = $var1 / $var2
             }
-            Write-Host "Ответ: $var4"
+            Write-Output "Ответ: $var4"
             Start-Sleep -Seconds 3
             Clear-Host
             Clear-Variable -Name var1
@@ -121,7 +121,7 @@ if ($answer -contains $yes) {
             Clear-Variable -Name var3
             Clear-Variable -Name var4
             Clear-Variable -Name answer
-            Write-Host $Message
+            Write-Output $Message
             $answer = Read-Host
             Clear-Host
                 if ($answer -contains $no) {
@@ -131,7 +131,7 @@ if ($answer -contains $yes) {
                 }
                 ElseIf ($answer -ne $no, $yes) {
                     Clear-Host
-                    Write-Host "Пожалуйста, используйте <Д> или <Н>!"
+                    Write-Output "Пожалуйста, используйте <Д> или <Н>!"
                     Start-Sleep -Seconds 3
                     $answer = $yes
                     Clear-Host
@@ -141,14 +141,14 @@ if ($answer -contains $yes) {
 
 ElseIf ($answer -contains $no) {
     Clear-Host
-    Write-Host "( ˘_˘ )"
+    Write-Output "( ˘_˘ )"
     Start-Sleep -Seconds 3
     Clear-Host
     break
 }
 Else {
     Clear-Host
-    Write-Host "Пожалуйста, используйте <д> или <н>!"
+    Write-Output "Пожалуйста, используйте <д> или <н>!"
     Start-Sleep -Seconds 3
     Clear-Host
     break
