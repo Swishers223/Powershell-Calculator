@@ -52,7 +52,7 @@ if ($answer -contains $yes) {
                 Start-Sleep -Seconds 3
                 break
             }
-            ElseIf ($answer -ne $no, $yes) {
+            ElseIf ($answer -ne $no -ne $yes) {
                 Clear-Host
                 Write-Output "Please, use <Y> or <N>!"
                 Start-Sleep -Seconds 3
@@ -129,7 +129,7 @@ if ($answer -contains $yes) {
                     Start-Sleep -Seconds 3
                     break
                 }
-                ElseIf ($answer -ne $no, $yes) {
+                ElseIf ($answer -ne $no -ne $yes) {
                     Clear-Host
                     Write-Output "Пожалуйста, используйте <Д> или <Н>!"
                     Start-Sleep -Seconds 3
